@@ -1,0 +1,416 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+   <script>
+       /* http://prismjs.com/download.html?themes=prism&languages=clike+java */
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=_self.Prism={util:{encode:function(e){return e instanceof n?new n(e.type,t.util.encode(e.content),e.alias):"Array"===t.util.type(e)?e.map(t.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=t.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return t.util.clone(e)})}return e}},languages:{extend:function(e,n){var a=t.util.clone(t.languages[e]);for(var r in n)a[r]=n[r];return a},insertBefore:function(e,n,a,r){r=r||t.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==n)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return t.languages.DFS(t.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,n,a){for(var r in e)e.hasOwnProperty(r)&&(n.call(e,r,e[r],a||r),"Object"===t.util.type(e[r])?t.languages.DFS(e[r],n):"Array"===t.util.type(e[r])&&t.languages.DFS(e[r],n,r))}},plugins:{},highlightAll:function(e,n){for(var a,r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'),l=0;a=r[l++];)t.highlightElement(a,e===!0,n)},highlightElement:function(n,a,r){for(var l,i,o=n;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=t.languages[l]),n.className=n.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=n.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=n.textContent,u={element:n,language:l,grammar:i,code:s};if(!s||!i)return t.hooks.run("complete",u),void 0;if(t.hooks.run("before-highlight",u),a&&_self.Worker){var g=new Worker(t.filename);g.onmessage=function(e){u.highlightedCode=e.data,t.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),t.hooks.run("after-highlight",u),t.hooks.run("complete",u)},g.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=t.highlight(u.code,u.grammar,u.language),t.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(n),t.hooks.run("after-highlight",u),t.hooks.run("complete",u)},highlight:function(e,a,r){var l=t.tokenize(e,a);return n.stringify(t.util.encode(l),r)},tokenize:function(e,n){var a=t.Token,r=[e],l=n.rest;if(l){for(var i in l)n[i]=l[i];delete n.rest}e:for(var i in n)if(n.hasOwnProperty(i)&&n[i]){var o=n[i];o="Array"===t.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],g=u.inside,c=!!u.lookbehind,f=0,h=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var d=r[p];if(r.length>e.length)break e;if(!(d instanceof a)){u.lastIndex=0;var m=u.exec(d);if(m){c&&(f=m[1].length);var y=m.index-1+f,m=m[0].slice(f),v=m.length,k=y+v,b=d.slice(0,y+1),w=d.slice(k+1),P=[p,1];b&&P.push(b);var A=new a(i,g?t.tokenize(m,g):m,h);P.push(A),w&&P.push(w),Array.prototype.splice.apply(r,P)}}}}}return r},hooks:{all:{},add:function(e,n){var a=t.hooks.all;a[e]=a[e]||[],a[e].push(n)},run:function(e,n){var a=t.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(n)}}},n=t.Token=function(e,t,n){this.type=e,this.content=t,this.alias=n};if(n.stringify=function(e,a,r){if("string"==typeof e)return e;if("Array"===t.util.type(e))return e.map(function(t){return n.stringify(t,a,e)}).join("");var l={type:e.type,content:n.stringify(e.content,a,r),tag:"span",classes:["token",e.type],attributes:{},language:a,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===t.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}t.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var n=JSON.parse(e.data),a=n.language,r=n.code,l=n.immediateClose;_self.postMessage(t.highlight(r,t.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var a=document.getElementsByTagName("script");return a=a[a.length-1],a&&(t.filename=a.src,document.addEventListener&&!a.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+Prism.languages.java=Prism.languages.extend("clike",{keyword:/\b(abstract|continue|for|new|switch|assert|default|goto|package|synchronized|boolean|do|if|private|this|break|double|implements|protected|throw|byte|else|import|public|throws|case|enum|instanceof|return|transient|catch|extends|int|short|try|char|final|interface|static|void|class|finally|long|strictfp|volatile|const|float|native|super|while)\b/,number:/\b0b[01]+\b|\b0x[\da-f]*\.?[\da-fp\-]+\b|\b\d*\.?\d+(?:e[+-]?\d+)?[df]?\b/i,operator:{pattern:/(^|[^.])(?:\+[+=]?|-[-=]?|!=?|<<?=?|>>?>?=?|==?|&[&=]?|\|[|=]?|\*=?|\/=?|%=?|\^=?|[?:~])/m,lookbehind:!0}});
+   </script>
+    <style>
+        /* http://prismjs.com/download.html?themes=prism&languages=clike+java */
+        /**
+        * prism.js default theme for JavaScript, CSS and HTML
+        * Based on dabblet (http://dabblet.com)
+        * @author Lea Verou
+        */
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+        color: black;
+        text-shadow: 0 1px white;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        direction: ltr;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+        }
+
+        pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+        code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+        text-shadow: none;
+        background: #b3d4fc;
+        }
+
+        pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+        code[class*="language-"]::selection, code[class*="language-"] ::selection {
+        text-shadow: none;
+        background: #b3d4fc;
+        }
+
+        @media print {
+        code[class*="language-"],
+        pre[class*="language-"] {
+        text-shadow: none;
+        }
+        }
+
+        /* Code blocks */
+        pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        }
+
+        :not(pre) > code[class*="language-"],
+        pre[class*="language-"] {
+        background: #f5f2f0;
+        }
+
+        /* Inline code */
+        :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        }
+
+        .token.comment,
+        .token.prolog,
+        .token.doctype,
+        .token.cdata {
+        color: slategray;
+        }
+
+        .token.punctuation {
+        color: #999;
+        }
+
+        .namespace {
+        opacity: .7;
+        }
+
+        .token.property,
+        .token.tag,
+        .token.boolean,
+        .token.number,
+        .token.constant,
+        .token.symbol,
+        .token.deleted {
+        color: #905;
+        }
+
+        .token.selector,
+        .token.attr-name,
+        .token.string,
+        .token.char,
+        .token.builtin,
+        .token.inserted {
+        color: #690;
+        }
+
+        .token.operator,
+        .token.entity,
+        .token.url,
+        .language-css .token.string,
+        .style .token.string {
+        color: #a67f59;
+        background: hsla(0, 0%, 100%, .5);
+        }
+
+        .token.atrule,
+        .token.attr-value,
+        .token.keyword {
+        color: #07a;
+        }
+
+        .token.function {
+        color: #DD4A68;
+        }
+
+        .token.regex,
+        .token.important,
+        .token.variable {
+        color: #e90;
+        }
+
+        .token.important,
+        .token.bold {
+        font-weight: bold;
+        }
+        .token.italic {
+        font-style: italic;
+        }
+
+        .token.entity {
+        cursor: help;
+        }
+    </style>
+
+    <style>
+        .background-blue{
+            background-color: #cceeff;
+        }
+        .background-yellow{
+            background-color: #ccffee;
+        }
+    </style>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=258059737705916";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--
+<center><img src="img/logo.png"/></center>
+
+
+
+
+
+        Design Patterns are solutions for common problems in software development, but sometimes are hard to really understand due to complicated or outdated stuff. If you want to learn quickly, there's a updated list of patterns revised for newdays explained when you need to use each of them. Ah, doesn't like Java? me neither, I just picked because is popular and everyone can understand, you too!
+
+        <iframe src="https://ghbtns.com/github-btn.html?user=twbs&repo=bootstrap&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+
+        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-count="none">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+        <div class="fb-share-button" data-href="http://leonardiwagner.github.io/easy-patterns" data-layout="button"></div>
+-->
+<div class="row background-blue">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h2>Factory Pattern</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>When to use?</h4>
+                <ul>
+                    <li>Class have constructor with multiple parameters</li>
+                    <li>Class have multiple constructors</li>
+                    <li>You want to control how classes are instantiated</li>
+                </ul>
+                <h4>What problems does it solves?</h4>
+                <ul>
+                    <li>Centralizes in one place (Factory) how class can be instantiated</li>
+                    <li>Avoids the code smell of using <code>new</code> keyword inside other classes.</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <img src="img/factory.png" style="width: 100%"/>
+            </div>
+        </div>
+
+
+        <h3>Using Factory Pattern to create different kinds of robots</h3>
+        <p>
+            The class <strong>Robot</strong> represents a robot with name, speed, stamina and strength attributes.
+        </p>
+        <code class="language-java">public class Robot {
+    private String name;
+    private int speed;
+    private int stamina;
+    private int strength;
+
+    protected Robot(String name, int speed, int stamina, int strength){
+        this.name = name;
+        this.speed = speed;
+        this.stamina = stamina;
+        this.strength = strength;
+    }
+
+    public String getName() { return this.name; }
+    public int getSpeed() { return this.speed; }
+    public int getStamina() { return this.stamina; }
+    public int getStrength() { return this.strength; }
+}</code>
+        <p>as we're going to create different types of robots based on different attributes values, we created an enum to name each robot type.</p>
+        <code class="language-java">public enum RobotType {
+    SPEEDSTER, EXPLORER, FIGHTER
+}</code>
+        <h3>Right, now the factory class itself!</h3>
+        <p>The <strong>RobotFactory</strong> class has the <code>create(RobotType robotType)</code> method that by given <strong>RobotType</strong> returns a instance of <strong>Robot</strong> </p>
+        <code class="language-java">public class RobotFactory {
+    public Robot create(RobotType robotType){
+        switch (robotType){
+            case SPEEDSTER:
+                return new Robot("speedster robot", 100, 80, 20);
+            case EXPLORER:
+                return new Robot("explorer robot", 50, 100, 50);
+            case FIGHTER:
+                return new Robot("fighter robot", 20, 80, 100);
+            default:
+                return new Robot("robot", 50, 50, 50);
+        }
+    }
+}</code>
+        <h3>Yes, we've finished, that's all, easy eh? Example how we can use our factory:</h3>
+<code class="language-java">Robot speedsterRobot = robotFactory.create(RobotType.SPEEDSTER);
+Robot fighterRobot = robotFactory.create(RobotType.FIGHTER);
+
+if(fighterRobot.getStrength() > explorerRobot.getStrength()) {
+    System.out.println(fighterRobot.getName() + " is stronger than " + explorerRobot.getName());
+}</code>
+
+        <h3>Benefits</h3>
+        <ul>
+            <li>
+                It's better to read <code>create(RobotType.SPEEDSTER)</code> rather than <code>new Robot("speedster robot", 100, 80, 20)</code>
+            </li>
+            <li>
+                Avoids wrong instatiation of a class, such as <code>new Robot("slow speedster robot", 0, 0, 0)</code>
+            </li>
+            <li>
+                If an attribute of some robot type needs to be changed, we'll do it only on <strong>RobotFactory</strong> class, instead looking for every <strong>Robot</strong> instantiation in our entire code.
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+<div class="row background-yellow">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h2>Decorator Pattern</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>When to use?</h4>
+                <ul>
+                    <li>We want to add new functionalities to a class at runtime.</li>
+                    <li>Class have multiple constructors</li>
+                    <li>You want to control how classes are instantiated</li>
+                </ul>
+                <h4>What problems does it solves?</h4>
+                <ul>
+                    <li>Centralizes in one place (Factory) how class can be instantiated</li>
+                    <li>Avoids the code smell of using <code>new</code> keyword inside other classes.</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <img src="img/decorator.png" style="width: 100%"/>
+            </div>
+        </div>
+
+
+        <h3>Using Decorator to attach new functionalities to our robots</h3>
+        <p>
+            We have the same <strong>Robot</strong> class, but now it implements the <strong>RobotInterface</strong> interface
+        </p>
+        <code class="language-java">public class Robot implements RobotInterface {
+    private String name;
+    private int speed;
+    private int stamina;
+    private int strength;
+
+    public Robot(String name, int speed, int stamina, int strength){
+        this.name = name;
+        this.speed = speed;
+        this.stamina = stamina;
+        this.strength = strength;
+    }
+
+    public String getName() { return this.name; }
+    public int getSpeed() { return this.speed; }
+    public int getStamina() { return this.stamina; }
+    public int getStrength() { return this.strength; }
+}</code>
+        <h3>Why this interface?</h3>
+        <p>We create the <strong>RobotInterface</strong> interface based on what <strong>Robot</strong> do. Now any class that we create that implements <strong>RobotInterface</strong> can be interchangeable with <strong>Robot</strong>, cool eh?</p>
+        <code class="language-java">public interface RobotSpec {
+    String getName();
+    int getSpeed();
+    int getStamina();
+    int getStrength();
+}</code>
+        <h3>Creating a decoration to Robot</h3>
+        <p>We can attach things to our robots, such as extra batteries. To do it, our decorator class should implement <strong>RobotInterface</strong> too, and receive the original <strong>Robot</strong> by constructor and store it at <code>private RobotInterface robot</code>. Why? In that way we just create our <strong>ExtraBatteriesDecorator</strong> pretty much like <strong>Robot</strong>, implementing all methods and returning the original values, except those who we want to decorate. In the <strong>ExtraBatteriesDecorator</strong> we're adding <code>+ 50</code> of stamina of original robot received by constructor, and also adding a description in the <code>getName()</code> method</p>
+        <code class="language-java">public class ExtraBatteriesDecorator implements RobotSpec {
+    private RobotInterface robot;
+    public ExtraBatteriesDecorator(RobotInterface robot){ this.robot = robot;}
+
+    @Override
+    public String getName() {
+        return this.robot.getName() + ", with extra batteries";
+    }
+
+    @Override
+    public int getSpeed() { return this.robot.getSpeed(); }
+
+    @Override
+    public int getStamina() {
+        return this.robot.getStamina() + 50;
+    }
+
+    @Override
+    public int getStrength() { return this.robot.getStrength(); }
+}</code>
+
+        <h3>Yes, we </h3>
+        <code class="language-java">RobotInterface robot = new Robot("just a robot", 50, 50, 50);
+            RobotInterface robotWithExtraBatteries = new ExtraBatteriesDecorator(robot);
+
+if(robotWithExtraBatteries.getStamina() > robot.getStamina())) {
+    System.out.println(robotWithExtraBatteries.getName() + " has more stamina due extra batteries!");
+}</code>
+
+        <p>Not impressed yet? Now things get better, we can decorate a decorated object! Yo Dawg!:</p>
+        <code class="language-java">RobotInterface robotWithExtraBatteriesWithTurboWithSteelArmor = new SteelArmorDecorator(new TurboDecorator(robotWithExtraBatteries));
+
+if(robotWithExtraBatteriesWithTurboWithSteelArmor.getSpeed() > robot.getStamina())) {
+    System.out.println(robotWithExtraBatteriesWithTurboWithSteelArmor.getName() + " has more speed due turbo!");
+}
+if(robotWithExtraBatteriesWithTurboWithSteelArmor.getStrength() > robot.getStrength())) {
+    System.out.println(robotWithExtraBatteriesWithTurboWithSteelArmor.getName() + " has more strength due armor!");
+}</code>
+
+        <h3>Benefits</h3>
+        <ul>
+            <li>
+                It's better to read <code>create(RobotType.SPEEDSTER)</code> rather than <code>new Robot("speedster robot", 100, 80, 20)</code>
+            </li>
+            <li>
+                Avoids wrong instatiation of a class, such as <code>new Robot("slow speedster robot", 0, 0, 0)</code>
+            </li>
+            <li>
+                If an attribute of some robot type needs to be changed, we'll do it only on <strong>RobotFactory</strong> class, instead looking for every <strong>Robot</strong> instantiation in our entire code.
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+</body>
+</html>
