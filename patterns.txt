@@ -1,0 +1,21 @@
+creational
+    builder
+        - handles complex objects creation
+        - handles constructors with a lot of parameters
+        - handles when you can have a lot of differents constructors
+        - immutability, since dont expose getters
+        - focus to build an object step by step.
+        - used when you cant build an object in one step
+    factory
+        - build and object in one step
+        - dont expose instantiation logic
+        - wrapper function around constructors
+
+structural
+    decorator
+        - add functionalities to existing objects dinamically
+        - it wraps the object
+    proxy
+        - provide access to other object control it
+        - provide a smaller object for other thats too complex
+        - want to decouple your code for an remote one

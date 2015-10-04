@@ -1,3 +1,16 @@
+#Intellij
+.idea
+
+#Gradle
+.gradle/
+build.gradle
+build/
+gradle/
+gradlew
+gradlew.bat
+settings.gradle
+
+
 *.class
 
 # Mobile Tools for Java (J2ME)
